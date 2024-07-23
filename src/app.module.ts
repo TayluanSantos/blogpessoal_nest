@@ -16,7 +16,8 @@ import { PostagemModule } from './postagem/postagem.module';
       password: 'root',
       database: 'db_blogpessoal',
       entities: [Postagem],
-      synchronize: true // Checa se existe uma tabela,caso não exista,ele cria
+      synchronize: true, // Checa se existe uma tabela,caso não exista,ele cria
+      logging: true // Mostra o SQL gerado quando executamos um método
     }),
     PostagemModule
   ],
