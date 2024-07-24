@@ -1,6 +1,7 @@
 import { IsNotEmpty } from "class-validator";
-import { Column, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { Transform, TransformFnParams } from "class-transformer";
+import { Tema } from "../../tema/entities/tema.entity";
 
 @Entity({name:"tb_postagens"})
 export class Postagem {
@@ -20,4 +21,11 @@ export class Postagem {
 
     @UpdateDateColumn() // Preenche a data e a hora automaticamente
     data: Date;
+
+    @ManyToOne(() => Tema, (tema) => tema.postagem, {
+        onDelete: "CASCADE" // Indica que quando um tema for excluído, as postagens associadas serão apagadas
+    })
+    tema: Tema;
+
+
 }
