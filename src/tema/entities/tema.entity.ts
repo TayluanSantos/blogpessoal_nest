@@ -14,9 +14,8 @@ export class Tema {
     @Column({length: 255, nullable: false})
     descricao: string
 
-    @OneToMany(() => Postagem, (postagem) => postagem.tema, {
-        onDelete: "CASCADE" // Indica que quando um tema for excluído, as postagens associadas serão apagadas
-    })
+    @OneToMany(() => Postagem, (postagem) => postagem.tema)
+    
     postagem: Postagem[];
     
 }
