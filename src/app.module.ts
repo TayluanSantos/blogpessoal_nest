@@ -29,7 +29,7 @@ import { Usuario } from './usuario/entities/usuario.entity';
     AuthModule,
     UsuarioModule
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [],
 })
 export class AppModule {}
