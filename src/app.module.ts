@@ -22,7 +22,7 @@ import { Usuario } from './usuario/entities/usuario.entity';
       database: 'db_blogpessoal',
       entities: [Postagem,Tema,Usuario],
       synchronize: true, // Checa se existe uma tabela,caso não exista,ele cria
-      logging: true // Mostra o SQL gerado quando executamos um método
+      //logging: true // Mostra o SQL gerado quando executamos um método
     }),
     PostagemModule,
     TemaModule,
